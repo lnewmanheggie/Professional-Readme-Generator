@@ -16,5 +16,8 @@
   "bugs": {
     "url": "https://github.com/lnewmanheggie/Professional-Readme-Generator/issues"
   },
-  "homepage": "https://github.com/lnewmanheggie/Professional-Readme-Generator#readme"
+  "homepage": "https://github.com/lnewmanheggie/Professional-Readme-Generator#readme",
+  "dependencies": {
+    "inquirer": "^7.3.3"
+  }
 }

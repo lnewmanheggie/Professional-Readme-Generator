@@ -14,6 +14,8 @@ THEN I am taken to the corresponding section of the README */
 
 const inquirer = require('inquirer');
 const fs = require('fs');
+const markdown = require('./generateMarkdown.js');
+
 
 
 inquirer
@@ -58,7 +60,7 @@ inquirer
     {
         type: 'list',
         message: 'Which license would you like to use?',
-        choices: ["MIT", "Apache-2.0", "GPL-3.0", "BSD-2-Clause", "BSD-3-Clause", "BSD-4-Clause"],
+        choices: ["MIT", "Apache-2.0", "GPL-3.0", "WTFPL"],
         name: 'license',
     },
     {
@@ -75,21 +77,28 @@ inquirer
     },
   ])
   .then((response) => {
-        const title = response.title;
-        const description = response.description;
-        const installation = response.installation;
-        const usage = response.usage;
-        const contribution = response.contribution;
-        const test = response.test;
-        const license = response.license;
-        const username = response.username;
-        const email = response.email;
+    const title = response.title;
+    const description = response.description;
+    const installation = response.installation;
+    const usage = response.usage;
+    const contribution = response.contribution;
+    const test = response.test;
+    const license = response.license;
+    const username = response.username;
+    const email = response.email;
 
-        const data = `${title}\n${description}\n${installation}\n${usage}`
+    const data = 
+`${markdown.title(response)}
+${markdown.description(response)}
+${markdown.installation(response)}
+${markdown.usage(response)}
+${markdown.contribution(response)}
+${markdown.test(response)}
+${markdown.license(response)}`
 
-        fs.writeFile('README.md', data, (err) =>
-        err ? console.error(err) : console.log('Success!')
-        );
+    fs.writeFile('README.md', data, (err) =>
+    err ? console.error(err) : console.log('Success!')
+    );
     }
   );
 
