@@ -85,9 +85,11 @@ inquirer
         const username = response.username;
         const email = response.email;
 
-        // fs.writeFile('README.md', , (err) =>
-        // err ? console.error(err) : console.log('Success!')
-        // );
+        const data = `${title}\n${description}\n${installation}\n${usage}`
+
+        fs.writeFile('README.md', data, (err) =>
+        err ? console.error(err) : console.log('Success!')
+        );
     }
   );
 
