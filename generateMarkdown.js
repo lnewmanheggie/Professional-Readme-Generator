@@ -16,7 +16,6 @@ const renderLicenseBadge = license => {
             return "";
             break;
     }
-
 }
 
 const renderLicenseLink = license => {
