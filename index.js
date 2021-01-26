@@ -8,7 +8,6 @@ inquirer
         type: 'input',
         message: 'What is the title of your project?',
         name: 'title',
-        default: ''
     },
     {
         type: 'input',
@@ -50,14 +49,12 @@ inquirer
     {
         type: 'input',
         message: 'Enter your Github username',
-        name: 'username',
-        default: ''
+        name: 'username'
     },
     {
         type: 'input',
         message: 'Enter your email',
-        name: 'email',
-        default: ''
+        name: 'email'
     },
   ])
   .then((response) => {

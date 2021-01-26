@@ -41,38 +41,35 @@ const renderLicenseLink = license => {
 const noInput = "hit enter if this section does not apply"
 
 module.exports = {
-    licenseBadge: (data) => data.license === noInput 
+    licenseBadge: ({license}) => license === noInput 
         ? "" 
-        : `${renderLicenseBadge(data.license)}`,
+        : `${renderLicenseBadge(license)}`,
 
-    title: (data) => data.title === noInput
-        ? "" 
-        : `# ${data.title}`,
+    title: ({title}) => `# ${title}`,
 
-    description: (data) => data.description === noInput
+    description: ({description}) => description === noInput
         ? "" 
-        : `## Description\n${data.description}`,
+        : `## Description\n${description}`,
     
-    installation: (data) => data.installation === noInput 
+    installation: ({installation}) => installation === noInput 
         ? "" 
-        : `## Installation\n${data.installation}`,
+        : `## Installation\n${installation}`,
 
-    usage: (data) => data.usage === noInput 
+    usage: ({usage}) => usage === noInput 
         ? "" 
-        : `## Usage\n${data.usage}`,
+        : `## Usage\n${usage}`,
 
-    contribution: (data) => data.contribution === noInput 
+    contribution: ({contribution}) => contribution === noInput 
         ? "" 
-        : `## Contributing\n${data.contribution}`,
+        : `## Contributing\n${contribution}`,
 
-    test: (data) => data.test === noInput 
+    test: ({test}) => test === noInput 
         ? "" 
-        : `## Tests\n${data.test}`,
+        : `## Tests\n${test}`,
     
-    license: (data) => data.license === noInput 
+    license: ({license}) => license === noInput 
         ? "" 
-        : `## License\nLicensed under the ${renderLicenseLink(data.license)} license.`,
+        : `## License\nLicensed under the ${renderLicenseLink(license)} license.`,
 
-    questions: (data) => `## Questions\nPlease direct questions to [${data.username}](${data.username}) at ${data.email}`
-
+    questions: ({username, email}) => `## Questions\nPlease direct questions to [${username}](${username}) at ${email}`
 };
