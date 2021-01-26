@@ -88,7 +88,8 @@ inquirer
     const email = response.email;
 
     const data = 
-`${markdown.title(response)}
+`${markdown.licenseBadge(response)}
+${markdown.title(response)}
 ${markdown.description(response)}
 ${markdown.installation(response)}
 ${markdown.usage(response)}
