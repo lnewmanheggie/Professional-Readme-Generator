@@ -41,35 +41,35 @@ const renderLicenseLink = license => {
 const noInput = "hit enter if this section does not apply"
 
 module.exports = {
-    licenseBadge: ({license}) => license === noInput 
+    licenseBadge: (license) => license === noInput 
         ? "" 
         : `${renderLicenseBadge(license)}`,
 
-    title: ({title}) => `# ${title}`,
+    title: (title) => `# ${title}`,
 
-    description: ({description}) => description === noInput
+    description: (description) => description === noInput
         ? "" 
         : `## Description\n${description}`,
     
-    installation: ({installation}) => installation === noInput 
+    installation: (installation) => installation === noInput 
         ? "" 
         : `## Installation\n${installation}`,
 
-    usage: ({usage}) => usage === noInput 
+    usage: (usage) => usage === noInput 
         ? "" 
         : `## Usage\n${usage}`,
 
-    contribution: ({contribution}) => contribution === noInput 
+    contribution: (contribution) => contribution === noInput 
         ? "" 
         : `## Contributing\n${contribution}`,
 
-    test: ({test}) => test === noInput 
+    test: (test) => test === noInput 
         ? "" 
         : `## Tests\n${test}`,
     
-    license: ({license}) => license === noInput 
+    license: (license) => license === noInput 
         ? "" 
         : `## License\nLicensed under the ${renderLicenseLink(license)} license.`,
 
-    questions: ({username, email}) => `## Questions\nPlease direct questions to [${username}](${username}) at ${email}`
+    questions: (username, email) => `## Questions\nPlease direct questions to [${username}](${username}) at ${email}`
 };

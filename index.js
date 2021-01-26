@@ -57,17 +57,17 @@ inquirer
         name: 'email'
     },
   ])
-  .then((response) => {
+  .then(({title, description, installation, usage, contribution, test, license, username, email}) => {
     const data = 
-`${markdown.licenseBadge(response)}
-${markdown.title(response)}
-${markdown.description(response)}
-${markdown.installation(response)}
-${markdown.usage(response)}
-${markdown.contribution(response)}
-${markdown.test(response)}
-${markdown.license(response)}
-${markdown.questions(response)}`
+`${markdown.licenseBadge(license)}
+${markdown.title(title)}
+${markdown.description(description)}
+${markdown.installation(installation)}
+${markdown.usage(usage)}
+${markdown.contribution(contribution)}
+${markdown.test(test)}
+${markdown.license(license)}
+${markdown.questions(username, email)}`
 
     fs.writeFile('README.md', data, (err) =>
     err ? console.error(err) : console.log('Success!')
