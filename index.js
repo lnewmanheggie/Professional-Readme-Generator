@@ -94,7 +94,8 @@ ${markdown.installation(response)}
 ${markdown.usage(response)}
 ${markdown.contribution(response)}
 ${markdown.test(response)}
-${markdown.license(response)}`
+${markdown.license(response)}
+${markdown.questions(response)}`
 
     fs.writeFile('README.md', data, (err) =>
     err ? console.error(err) : console.log('Success!')
