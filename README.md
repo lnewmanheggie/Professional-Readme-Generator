@@ -3,6 +3,8 @@
 
 ![Demo](./vid2.gif)
 
+[View the high quality video here](https://drive.google.com/file/d/1EajLRuyxXjLBI5Uq5yZ8wlm_0CWEOtTV/view?usp=sharing)
+
 ## Description
 Command line application to create a professional readme based on user input, in Node.js
 ## Installation
